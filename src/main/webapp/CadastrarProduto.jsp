@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:url value="produtos/novo" var="criarProdutoServlet" />
+<c:url value="produtos/lista" var="listarProdutos"/>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,7 +14,7 @@
 	<h2 class="lista-titulo">Cadastro de Produtos</h2>
 	<nav class="lista-navbar">
 		<a href="home.jsp"> <input type="button" value="Home">
-		</a> <a href="listarProdutos.jsp"> <input type="button"
+		</a> <a href="${ listarProdutos }"> <input type="button"
 			value="Listar Produto">
 		</a>
 	</nav>

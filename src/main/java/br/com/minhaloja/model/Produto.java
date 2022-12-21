@@ -2,6 +2,7 @@ package br.com.minhaloja.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,6 @@ import lombok.Getter;
 
 @Entity
 @Table(name="tb_produtos")
-@Getter
 public class Produto implements Serializable{
 	
 	@Id
@@ -23,7 +23,7 @@ public class Produto implements Serializable{
 	private String marca;
 	private double valor;
 	private int quantidade;
-	private LocalDateTime dataCriacao;
+	private Date dataCriacao;
 	private double total;
 	
 	public Produto() {
@@ -34,8 +34,36 @@ public class Produto implements Serializable{
 		this.marca = marca;
 		this.valor = valor;
 		this.quantidade = quantidade;
-		this.dataCriacao = LocalDateTime.now();
+		this.dataCriacao = new Date();
 		setTotal();
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public double getValor() {
+		return valor;
+	}
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public Date getDataCriacao() {
+		return dataCriacao;
+	}
+
+	public double getTotal() {
+		return total;
 	}
 
 	public void setNome(String nome) {

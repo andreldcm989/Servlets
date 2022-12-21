@@ -30,6 +30,6 @@ public class CriarProdutoServlet extends HttpServlet{
 		em.persist(p);
 		em.getTransaction().commit();
 		em.close();
-		resp.sendRedirect("/minhaloja/listarProdutos.jsp");
+		resp.sendRedirect("lista");
 	}
 }

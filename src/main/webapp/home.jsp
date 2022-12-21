@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:url value="produtos/lista" var="listarProdutos"/>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,7 +13,7 @@
 	<h2>Bem-vindo!!</h2>
 
 	<section class="home-container">
-		<a href="listarProdutos.jsp">
+		<a href="${ listarProdutos }">
 			<input type="button" class="home-card" value="Listar Produtos"/>
 		</a>
 		<a href="CadastrarProduto.jsp">
