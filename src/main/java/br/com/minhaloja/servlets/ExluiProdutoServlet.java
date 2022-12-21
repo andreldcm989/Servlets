@@ -13,23 +13,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.minhaloja.model.Produto;
 
-@WebServlet(urlPatterns = "/produtos/novo")
-public class CriarProdutoServlet extends HttpServlet{
+@WebServlet(urlPatterns = "/produtos/excluir")
+public class ExluiProdutoServlet extends HttpServlet{
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String nome = req.getParameter("nome");
-		String marca = req.getParameter("marca");
-		double valor = Double.parseDouble(req.getParameter("valor"));
-		int quantidade = Integer.parseInt(req.getParameter("quantidade"));
-		Produto p = new Produto(nome, marca, valor, quantidade);
-		System.out.println(p.toString());
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("minhaloja");
 		EntityManager em = factory.createEntityManager();
+		
 		em.getTransaction().begin();
-		em.persist(p);
+		Produto produto = em.find(Produto.class, Integer.parseInt(req.getParameter("id")));
+		em.remove(produto);
 		em.getTransaction().commit();
 		em.close();
+		System.out.println("produto excluido com sucesso!");
 		resp.sendRedirect("lista");
 	}
+
 }

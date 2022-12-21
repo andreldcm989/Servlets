@@ -52,7 +52,7 @@
 						<td><a href="editar?id=1"> <input type="button"
 								value="Editar">
 						</a></td>
-						<td><a href="excluir?id=1"> <input type="button"
+						<td><a href="excluir?id=${ produto.id }"> <input type="button"
 								value="Excluir">
 						</a></td>
 					</tr>

@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.minhaloja.model.Produto;
 
 @WebServlet(urlPatterns = "/produtos/lista")
-public class ListarProdutosServlet extends HttpServlet{
+public class ListaProdutosServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
