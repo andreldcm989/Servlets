@@ -12,12 +12,12 @@
 	<h2>Bem-vindo!!</h2>
 
 	<section class="home-container">
-		<div class="home-card">
-			<h4><a href="listarProdutos.jsp">Listar Produtos</a></h4>
-		</div>
-		<div class="home-card">
-			<h4><a href="listarProdutos.jsp">Cadastrar Produtos</a></h4>
-		</div>
+		<a href="listarProdutos.jsp">
+			<input type="button" class="home-card" value="Listar Produtos"/>
+		</a>
+		<a href="CadastrarProduto.jsp">
+			<input type="button" class="home-card" value="Cadastrar Produtos"/>
+		</a>
 	</section>
 </body>
 </html>

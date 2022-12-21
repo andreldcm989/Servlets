@@ -16,7 +16,7 @@
 		<a href="home.jsp">
 			<input type="button" value="Home">
 		</a>
-		<a href="#">
+		<a href="CadastrarProduto.jsp">
 			<input type="button" value="Novo Produto">
 		</a>
 	</nav>
