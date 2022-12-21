@@ -2,6 +2,9 @@ package br.com.minhaloja.servlets;
 
 import java.io.IOException;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +24,12 @@ public class CriarProdutoServlet extends HttpServlet{
 		int quantidade = Integer.parseInt(req.getParameter("quantidade"));
 		Produto p = new Produto(nome, marca, valor, quantidade);
 		System.out.println(p.toString());
-		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("minhaloja");
+		EntityManager em = factory.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(p);
+		em.getTransaction().commit();
+		em.close();
 		resp.sendRedirect("/minhaloja/listarProdutos.jsp");
 	}
 }

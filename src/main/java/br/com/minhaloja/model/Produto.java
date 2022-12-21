@@ -11,13 +11,13 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 
-//@Entity
-//@Table(name="tb_produtos")
+@Entity
+@Table(name="tb_produtos")
 @Getter
 public class Produto implements Serializable{
 	
-	private static int ID = 1;
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nome;
 	private String marca;
@@ -30,7 +30,6 @@ public class Produto implements Serializable{
 	}
 	
 	public Produto(String nome, String marca, double valor, int quantidade) {
-		this.id = ID++;
 		this.nome = nome;
 		this.marca = marca;
 		this.valor = valor;
