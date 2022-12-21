@@ -4,8 +4,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page import="br.com.minhaloja.model.Produto"%>
 
-<c:url value="/home.jsp" var="home"/>
-<c:url value="/CadastrarProduto.jsp" var="cadastro"/>
+<c:url value="/home.jsp" var="home" />
+<c:url value="/CadastrarProduto.jsp" var="cadastro" />
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -23,6 +23,7 @@
 		</a>
 	</nav>
 	<c:if test="${ not empty produtos }">
+		<fmt:setLocale value="pt_BR" />
 		<table class="lista-table">
 			<thead>
 				<tr>
@@ -42,10 +43,12 @@
 						<td>${ produto.id }</td>
 						<td>${ produto.nome }</td>
 						<td>${ produto.marca }</td>
-						<td>${ produto.valor }</td>
+						<td><fmt:formatNumber value="${ produto.valor }"
+								type="currency" /></td>
 						<td>${ produto.quantidade }</td>
-						<td>${ produto.total }</td>
-						<td><fmt:formatDate value="${ produto.dataCriacao }" pattern="dd/MM/yyyy HH:mm"/></td>
+						<td><fmt:formatNumber value="${ produto.total }" type="currency"/></td>
+						<td><fmt:formatDate value="${ produto.dataCriacao }"
+								pattern="dd/MM/yyyy HH:mm" /></td>
 						<td><a href="editar?id=1"> <input type="button"
 								value="Editar">
 						</a></td>
