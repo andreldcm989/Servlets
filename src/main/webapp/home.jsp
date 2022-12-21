@@ -11,12 +11,12 @@
 <body>
 	<h2>Bem-vindo!!</h2>
 
-	<section class="container">
-		<div class="card">
-			<h4>Listar Produtos</h4>
+	<section class="home-container">
+		<div class="home-card">
+			<h4><a href="listarProdutos.jsp">Listar Produtos</a></h4>
 		</div>
-		<div class="card">
-			<h4>Cadastrar Produtos</h4>
+		<div class="home-card">
+			<h4><a href="listarProdutos.jsp">Cadastrar Produtos</a></h4>
 		</div>
 	</section>
 </body>

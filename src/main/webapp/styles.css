@@ -14,7 +14,7 @@ body{
 	align-items: center;
 }
 
-.container{
+.home-container{
 	margin: 10px;
 	width: 250px;
 	height: auto;
@@ -24,7 +24,7 @@ body{
 	border: 1px solid #0000FF;
 }
 
-.card{
+.home-card{
 	margin: 10px;
 	width: 80px;
 	height: 80px;
@@ -38,10 +38,56 @@ body{
 	transition: 0.2s all ease-in-out;
 }
 
-.card:hover {
+.home-card h4 a:visited,
+.home-card h4 a:link,
+.home-card h4 a:active{
+	text-decoration: none;
+}
+
+
+.home-card:hover {
 	transform: scale(1.05);
 	background-color: #0000DD;
+}
+
+.home-card:hover a{
 	color: #FFFFFF;
 }
 
-.card
+.lista-titulo{
+	margin: 10px;
+}
+
+.lista-navbar{
+	width: 100vw;
+	height: 40px;
+	margin: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: lightgrey;
+	
+}
+
+.lista-navbar a{
+	margin: 5px;
+}
+
+.lista-navbar a input{
+	cursor: pointer;
+}
+
+.lista-table{
+	border-collapse: collapse;
+	border: 1px solid black;
+	text-align: center;
+}
+
+
+.lista-table th,
+.lista-table td {
+	border: 1px solid black;
+	padding: 5px 7px;
+	height: auto;
+	width: auto;
+}
