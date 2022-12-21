@@ -11,29 +11,32 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 
-@Entity
-@Table(name="tb_produtos")
+//@Entity
+//@Table(name="tb_produtos")
 @Getter
 public class Produto implements Serializable{
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private static int ID = 1;
+	
 	private int id;
 	private String nome;
 	private String marca;
 	private double valor;
 	private int quantidade;
 	private LocalDateTime dataCriacao;
+	private double total;
 	
 	public Produto() {
 	}
 	
 	public Produto(String nome, String marca, double valor, int quantidade) {
+		this.id = ID++;
 		this.nome = nome;
 		this.marca = marca;
 		this.valor = valor;
 		this.quantidade = quantidade;
 		this.dataCriacao = LocalDateTime.now();
+		setTotal();
 	}
 
 	public void setNome(String nome) {
@@ -52,4 +55,12 @@ public class Produto implements Serializable{
 		this.quantidade = quantidade;
 	}
 	
+	public void setTotal() {
+		this.total = valor * quantidade;
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("Nome: %s | Marca: %s | Valor: R$ %.2f | Qtde: %d | Total: R$ %.2f | Criado em %6$te/%6$tm/%6$tY", nome, marca, valor, quantidade, total, dataCriacao);
+	}
 }

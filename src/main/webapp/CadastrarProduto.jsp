@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:url value="produtos/novo" var="criarProdutoServlet" />
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -18,7 +20,7 @@
 
 	<div class="cadastro-container">
 		<h3>Preencha os campos abaixo:</h3>
-		<form action="" method="post">
+		<form action="${ criarProdutoServlet }" method="post">
 			<div class="cadastro-input">
 				<label for="nome">Nome Produto: </label> <input type="text"
 					name="nome" required>
@@ -39,7 +41,6 @@
 				<input class="button" type="submit" value="Salvar">
 				<input class="button" type="submit" value="Cancelar">
 			</div>
-
 		</form>
 	</div>
 </body>
