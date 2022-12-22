@@ -15,16 +15,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.minhaloja.model.Produto;
+import br.com.minhaloja.model.dao.ProdutoDAO;
 
 @WebServlet(urlPatterns = "/produtos/lista")
 public class ListaProdutosServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("minhaloja");
-		EntityManager em = factory.createEntityManager();
-		String query = "SELECT p FROM Produto p";
-		List<Produto> produtos = em.createQuery(query, Produto.class).getResultList();
+		ProdutoDAO dao = ProdutoDAO.getInstance("minhaloja");
+		List<Produto> produtos = dao.listarProdutos();
 		req.setAttribute("produtos", produtos);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/listarProdutos.jsp");
 		dispatcher.forward(req, resp);
