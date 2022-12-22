@@ -143,10 +143,10 @@ a:active{
 .cadastro-input .button:hover{
 	transform: scale(1.1);
 }
-
-.cadastro-input .button:nth-child(1) {
-	background-color: #009700;
-}
-.cadastro-input .button:nth-child(2) {
+.cadastro-input a .button {
 	background-color: #b90000;
+}
+
+.cadastro-input .button {
+	background-color: #009700;
 }
