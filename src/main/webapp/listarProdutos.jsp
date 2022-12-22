@@ -5,13 +5,14 @@
 <%@ page import="br.com.minhaloja.model.Produto"%>
 
 <c:url value="/home.jsp" var="home" />
-<c:url value="/CadastrarProduto.jsp" var="cadastro" />
+<c:url value="/cadastrarProduto.jsp" var="cadastro" />
+<c:url value="/styles.css" var="css"/>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="/minhaloja/styles.css" />
+<link rel="stylesheet" href="${ css }" />
 <title>Produtos | Minha Loja</title>
 </head>
 <body>
@@ -49,7 +50,7 @@
 						<td><fmt:formatNumber value="${ produto.total }" type="currency"/></td>
 						<td><fmt:formatDate value="${ produto.dataCriacao }"
 								pattern="dd/MM/yyyy HH:mm" /></td>
-						<td><a href="editar?id=1"> <input type="button"
+						<td><a href="editar?id=${ produto.id }"> <input type="button"
 								value="Editar">
 						</a></td>
 						<td><a href="excluir?id=${ produto.id }"> <input type="button"

@@ -117,7 +117,7 @@ a:active{
 	justify-content: space-between;
 }
 
-.cadastro-input:nth-child(5){
+.cadastro-input:last-child{
 	justify-content: space-around;
 }
 
