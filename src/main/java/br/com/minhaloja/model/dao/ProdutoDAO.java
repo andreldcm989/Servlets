@@ -28,6 +28,10 @@ public class ProdutoDAO {
 		return em.createQuery(query, Produto.class).getResultList();
 	}
 	
+	public Produto buscarProdutoPorId(int id) {
+		return em.find(Produto.class, id);
+	}
+	
 	public void fechaEntityManager() {
 		em.close();
 	}
